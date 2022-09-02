@@ -1,0 +1,45 @@
+{
+  "number_of_shards": "3",
+  "number_of_replicas": "1",
+  "max_result_window": "100000",
+  "max_inner_result_window": "100000",
+  "analysis": {
+    "analyzer": {
+      "ik_syno_max": {
+        "type": "custom",
+        "tokenizer": "ik_max_word",
+        "filter": ["lrqa_synonym_filter","lrqa_length_filter"]
+      },
+      "ik_syno_smart": {
+        "type": "custom",
+        "tokenizer": "ik_smart",
+        "filter": ["lrqa_synonym_filter","lrqa_length_filter"]
+      },
+      "pinyin_analyzer": {
+        "tokenizer": "my_pinyin"
+      }
+    },
+    "tokenizer": {
+      "my_pinyin": {
+        "type": "pinyin",
+        "keep_first_letter": true,
+        "keep_separate_first_letter": false,
+        "keep_full_pinyin": false,
+        "limit_first_letter_length": 20,
+        "lowercase": true,
+        "keep_none_chinese": false
+      }
+    },
+    "filter": {
+      "lrqa_synonym_filter": {
+        "type": "synonym",
+        "synonyms_path": "synonym.txt"
+      },
+      "lrqa_length_filter": {
+        "type": "length",
+        "min": 2,
+        "max": 30
+      }
+    }
+  }
+}

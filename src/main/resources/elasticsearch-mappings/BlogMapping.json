@@ -1,0 +1,76 @@
+{
+  "properties": {
+    "qid": {
+      "type": "keyword"
+    },
+    "eid": {
+      "type": "keyword"
+    },
+    "question": {
+      "type": "text",
+      "analyzer": "ik_syno_smart",
+      "search_analyzer": "ik_syno_smart",
+      "term_vector": "with_positions_offsets",
+      "fields": {
+        "questionSuggest": {
+          "type": "text",
+          "analyzer": "standard",
+          "search_analyzer": "standard",
+          "term_vector": "with_positions_offsets"
+        }
+      }
+    },
+    "answer": {
+      "type": "text",
+      "analyzer": "ik_syno_smart",
+      "search_analyzer": "ik_syno_smart"
+    },
+    "legalAnalysis": {
+      "type": "text",
+      "analyzer": "ik_syno_smart",
+      "search_analyzer": "ik_syno_smart"
+    },
+    "cid": {
+      "type": "keyword"
+    },
+    "level": {
+      "type": "keyword"
+    },
+    "rootLevel": {
+      "type": "keyword"
+    },
+    "orgSource": {
+      "type": "keyword"
+    },
+    "contacter": {
+      "type": "keyword"
+    },
+    "contactName": {
+      "type": "keyword"
+    },
+    "contactInfo": {
+      "type": "keyword"
+    },
+    "viewcount": {
+      "type": "keyword"
+    },
+    "path": {
+      "type": "keyword"
+    },
+    "pathArray": {
+      "type": "keyword"
+    },
+    "pathId": {
+      "type": "keyword"
+    },
+    "modifiedTime": {
+      "type": "date"
+    },
+    "internalRegulation": {
+      "type": "keyword"
+    },
+    "externalRegulation": {
+      "type": "keyword"
+    }
+  }
+}
