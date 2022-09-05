@@ -86,4 +86,8 @@
             </if>
         </trim>
     </insert>
+
+    <select id="selectAll" resultType="com.cloud.top.blog.model.Blog">
+        select * from blog;
+    </select>
 </mapper>
